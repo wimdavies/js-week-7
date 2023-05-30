@@ -4,6 +4,12 @@ class View {
 
     console.log(this.mainContainerEl);
   }
+
+  addParagraph() {
+    let p = document.createElement("p");
+    p.textContent = 'This paragraph has been dynamically added by JavaScript!';
+    this.mainContainerEl.append(p);
+  }
 }
 
 module.exports = View;
