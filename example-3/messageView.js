@@ -1,9 +1,14 @@
 class MessageView {
   constructor() {
-    this.buttonEl = document.querySelector('#show-message-button');
-
-    this.buttonEl.addEventListener('click', () => {
+    this.showMessageButtonEl = document.querySelector('#show-message-button');
+    this.hideMessageButtonEl = document.querySelector('#hide-message-button');
+    
+    this.showMessageButtonEl.addEventListener('click', () => {
        this.displayMessage();
+    });
+
+    this.hideMessageButtonEl.addEventListener('click', () => {
+      this.hideMessage();
     });
   }
 
@@ -16,6 +21,17 @@ class MessageView {
     document.querySelector('#main-container').append(messageEl);
 
     console.log('Thanks for clicking me!');
+  }
+
+  hideMessage() {
+    const messageEls = document.querySelectorAll('#message');
+
+    messageEls.forEach(messageEl => {
+      messageEl.remove();
+    });
+
+    // or, if we were sure we could only have one message on the page:
+    // document.querySelector('#message').remove();
   }
 }
 
