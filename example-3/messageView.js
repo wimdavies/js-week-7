@@ -13,14 +13,15 @@ class MessageView {
   }
 
   displayMessage() {
+    const messageValue = document.querySelector('#message-input').value; 
+    // console.log('messageValue');
+
     const messageEl = document.createElement('div');
 
-    messageEl.textContent = 'This message displayed by JavaScript';
+    messageEl.textContent = messageValue;
     messageEl.id = 'message';
 
     document.querySelector('#main-container').append(messageEl);
-
-    console.log('Thanks for clicking me!');
   }
 
   hideMessage() {
